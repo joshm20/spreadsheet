@@ -1,0 +1,91 @@
+# A statement followed by 0 to many NEWLINE or SEMICOLON and statements
+block:
+    | statement (NEWLINE||SEMICOLON statement)*
+
+statement:
+    | assignment; NEWLINE
+
+assignment:
+    | VARIABLE = level0
+    | level0
+
+level0:
+    | level0 || level1
+    | level1
+
+level1:
+    | level1 && level2
+    | level2
+
+level2:
+    | level2 | level3
+    | level3
+
+level3:
+    | level3 ^ level4
+    | level4
+
+level4:
+    | level4 & level5
+    | level5
+
+level5:
+    | level5 == level6
+    | level5 != level6
+    | level6
+
+level6:
+    | level6 < level7
+    | level6 > level7
+    | level6 <= level7
+    | level6 >= level7
+    | level7
+
+level7:
+    | level7 << level8
+    | level7 >> level8
+    | level8
+
+level8:
+    | level8 + level9
+    | level8 - level9
+    | level9
+
+level9:
+    | level9 * level10
+    | level9 / level10
+    | level9 % level10
+    | level10
+
+# Right-associative operators like exponentiation should recurse in their right
+# operand.
+level10:
+    | level11 ** level10
+    | level11
+
+level11:
+    | -level11
+    | !level11
+    | ~level11
+    | level12
+
+level12:
+    | INT  
+    | FLOAT 
+    | BOOLEAN
+    | STRING
+    | VARIABLE
+    | [level0, level0]
+    | #[level0, level0]
+    | max(level0, level0)
+    | min(level0, level0)
+    | sum(level0, level0)
+    | mean(level0, level0)
+
+    | IF level0 NEWLINE block ELSE block END
+    | FOR VARIABLE IN [level0, level0]..[level0, level0] NEWLINE block END
+
+    | float(level0)
+    | int(level0)
+    | ( level0 )
+
