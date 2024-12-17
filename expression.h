@@ -3,7 +3,7 @@
  * rvalues, and statistical functions.
  *
  * @author Josh Makela
- * @date 09-14-2024
+ * @date 12-17-2024
  */
 
 #ifndef expression_H
@@ -13,11 +13,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-
-// In case you need some encouragement, I am proud of you for choosing C++.
-// It's heady stuff, but it's like a piano. It teaches you about more than just
-// the thing itself. Pianos teach you music. C++ teaches you about the
-// computer.
 
 /*
 Expression, BinaryOperation, UnaryOperation, and Primitive are abstractions for

@@ -5,9 +5,12 @@
 #include <memory>
 #include <string>
 
-// Cell class represents a single cell in the spreadsheet.
-// It holds a string of the source code (will be implemented in the future),
-// an Expression, and the Primitive that the expression evaluates to.
+/* Cell class represents a single cell in the spreadsheet. It holds a string of
+ * the source code,an Expression, and the Primitive that the expression
+ * evaluates to.
+ *
+ * @date 12-17-2024
+ */
 class Cell
 {
 private:

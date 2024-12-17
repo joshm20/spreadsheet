@@ -1,6 +1,6 @@
 #include "cell.h"
 #include <memory>
-// Cell class implementation
+// Cell class implementation. See cell.h for more information.
 
 Cell::Cell (std::string src, std::unique_ptr<Expression> exp,
             std::unique_ptr<Primitive> primitive, std::string error)

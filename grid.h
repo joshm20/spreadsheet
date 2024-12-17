@@ -8,7 +8,13 @@
 #include <memory>
 #include <string>
 
-// Grid class holds a 2D array of pointers to Cells.
+/* The Grid class holds a 2D array of pointers to Cells. The rows and columns
+ * are specifically hardcoded to fit my screen on a linux system (NOT
+ * PORTABLE).
+ *
+ * @author Josh Makela
+ * @date 12-17-2024
+ */
 class Grid
 {
 private:
